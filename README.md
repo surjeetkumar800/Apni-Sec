@@ -40,23 +40,6 @@ Email integration (Resend)
 Database
 
 MongoDB (Mongoose)
-
-🏗️ Backend Architecture (OOP)
-
-The backend strictly follows class-based OOP design with proper separation of concerns.
-
-backend/
- └── server/
-     ├── controllers
-     ├── services
-     ├── repositories
-     ├── validators
-     ├── middlewares
-     ├── models
-     ├── utils
-     └── index.ts
-
-
 ✔ Clean architecture
 ✔ Dependency Injection
 ✔ Scalable and maintainable codebase
@@ -138,8 +121,11 @@ Optimized rendering
 Lighthouse SEO score above average
 
 📸 Screenshots
+Dashboard
+<img width="1808" height="929" alt="image" src="https://github.com/user-attachments/assets/4493ea86-4f45-4d44-b63b-3a04ed78f257" />
 
-Add screenshots of:
+<img width="1919" height="954" alt="image" src="https://github.com/user-attachments/assets/96248a7f-4bbb-42e4-938d-334ea03e44f9" />
+
 
 Landing page
 
