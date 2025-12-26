@@ -14,18 +14,34 @@ import { env } from "./config/env";
 
 const app = express();
 
+/* ================= ALLOWED ORIGINS ================= */
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "https://apni-sec.vercel.app",
+  "https://apni-sec-w75x.vercel.app",
+  "https://apni-sec-2.onrender.com"
+];
+
 /* ================= MIDDLEWARES ================= */
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: (origin, callback) => {
+      // allow server-to-server / Postman / curl
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
 
 app.use(express.json());
 app.use(morgan("dev"));
-
-// 🔥 Global rate limiter
 app.use(rateLimitMiddleware);
 
 /* ================= HEALTH CHECK ================= */
@@ -50,10 +66,10 @@ const PORT = Number(process.env.PORT) || 5000;
 
 async function startServer() {
   try {
-    await connectDB(); // ✅ FIX HERE
+    await connectDB();
 
     app.listen(PORT, () => {
-      console.log(`🚀 Backend running on http://localhost:${PORT}`);
+      console.log(`🚀 Backend running on port ${PORT}`);
     });
   } catch (error) {
     console.error("❌ Failed to start server", error);
