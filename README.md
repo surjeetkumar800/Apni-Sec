@@ -42,19 +42,17 @@ https://github.com/surjeetkumar800/Apni-Sec
 
 All backend logic follows **class-based architecture** with proper separation of concerns.
 
-
 backend/
-├── server/
-│ ├── controllers/ // Request handlers (classes)
-│ ├── services/ // Business logic (classes)
-│ ├── repositories/ // Data access layer (classes)
-│ ├── validators/ // Input validation (classes)
-│ ├── middlewares/ // Auth & rate limiting
-│ ├── models/ // Database schemas
-│ ├── errors/ // Custom error classes
-│ ├── utils/ // Helper utilities
-│ └── index.ts // App entry point
-
+└── server/
+    ├── controllers/      // Request handlers (classes)
+    ├── services/         // Business logic (classes)
+    ├── repositories/     // Data access layer (classes)
+    ├── validators/       // Input validation (classes)
+    ├── middlewares/      // Auth & rate limiting
+    ├── models/           // Database schemas
+    ├── errors/           // Custom error classes
+    ├── utils/            // Helper utilities
+    └── index.ts          // App entry point
 
 ✔ No functional business logic  
 ✔ Dependency Injection  
