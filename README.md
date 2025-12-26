@@ -1,172 +1,173 @@
-# 🛡️ ApniSec – SDE Intern Assignment
+🛡️ ApniSec – SDE Intern Assignment
 
-A full-stack, production-ready **Next.js application** built for the **ApniSec SDE Intern Assignment**, focusing on **security**, **OOP-based backend architecture**, **custom authentication**, **rate limiting**, **email integration**, and **SEO optimization**.
+A production-ready full-stack web application built as part of the ApniSec SDE Intern Assignment, with a strong focus on security, scalable backend architecture, and clean frontend implementation.
 
----
+🚀 Live URLs
 
-## 🚀 Live Demo
+Frontend: https://apni-sec-2.onrender.com
 
-- **Frontend (Vercel):** https://your-frontend-url.vercel.app  
-- **Backend (Render):** https://your-backend-url.onrender.com  
+Backend: https://apni-sec-backend.onrender.com
 
----
-
-## 📂 GitHub Repository
+📂 GitHub Repository
 
 https://github.com/surjeetkumar800/Apni-Sec
 
----
+🧱 Tech Stack
+Frontend
 
-## 🧱 Tech Stack
+Next.js (App Router)
 
-### Frontend
-- Next.js 15+ (App Router)
-- React 19
-- TypeScript
-- Tailwind CSS
-- SEO Optimized (80%+ Lighthouse score)
+React 19
 
-### Backend
-- Next.js API Routes / Route Handlers
-- **Strict Object-Oriented Programming (OOP)**
-- JWT-based Custom Authentication
-- Custom Rate Limiting
-- Resend Email Service
+TypeScript
 
-### Database
-- MongoDB (Mongoose ORM)
+Tailwind CSS
 
----
+SEO optimized pages
 
-## 🏗️ Backend Architecture (OOP – Mandatory)
+Backend
 
-All backend logic follows **class-based architecture** with proper separation of concerns.
+Node.js + Express
+
+Strict OOP-based architecture
+
+JWT Authentication
+
+Rate Limiting
+
+Email integration (Resend)
+
+Database
+
+MongoDB (Mongoose)
+
+🏗️ Backend Architecture (OOP)
+
+The backend strictly follows class-based OOP design with proper separation of concerns.
 
 backend/
-└── server/
-    ├── controllers/      // Request handlers (classes)
-    ├── services/         // Business logic (classes)
-    ├── repositories/     // Data access layer (classes)
-    ├── validators/       // Input validation (classes)
-    ├── middlewares/      // Auth & rate limiting
-    ├── models/           // Database schemas
-    ├── errors/           // Custom error classes
-    ├── utils/            // Helper utilities
-    └── index.ts          // App entry point
+ └── server/
+     ├── controllers
+     ├── services
+     ├── repositories
+     ├── validators
+     ├── middlewares
+     ├── models
+     ├── utils
+     └── index.ts
 
-✔ No functional business logic  
-✔ Dependency Injection  
-✔ Reusable and scalable design  
 
----
+✔ Clean architecture
+✔ Dependency Injection
+✔ Scalable and maintainable codebase
 
-## 🔐 Authentication System
+🔐 Authentication & Security
 
-- Custom JWT-based authentication
-- Password hashing using bcrypt
-- Protected routes with middleware
-- Secure session handling
+JWT-based authentication
 
-### Auth APIs
+Password hashing with bcrypt
 
+Protected routes via middleware
+
+Custom rate limiting
+100 requests / 15 minutes / IP
+
+📌 Core APIs
+Authentication
 
 POST /api/auth/register
+
 POST /api/auth/login
-POST /api/auth/logout
+
 GET /api/auth/me
 
-
----
-
-## 📌 Core APIs
-
-### 👤 User Profile
-
-
-GET /api/users/profile
-PUT /api/users/profile
-
-
-### 🐞 Issue Management (Required)
-
+Issue Management
 
 GET /api/issues
+
 POST /api/issues
-GET /api/issues/[id]
-PUT /api/issues/[id]
-DELETE /api/issues/[id]
+
+GET /api/issues/:id
+
+PUT /api/issues/:id
+
+DELETE /api/issues/:id
+
+Supported Issue Types:
+
+Cloud Security
+
+Red Team Assessment
+
+VAPT
+
+✉️ Email Integration
+
+Emails are sent using Resend API:
+
+Welcome email
+
+Issue creation notification
+
+Profile update notification
+
+🖥️ Frontend Pages
+
+/ – Landing page
+
+/login – Authentication
+
+/register – User registration
+
+/dashboard – Protected dashboard
+
+/profile – Profile management
+
+✔ Responsive UI
+✔ Form validation
+✔ Loading and error states
+
+🔍 SEO & Performance
+
+SEO-friendly meta tags
+
+Semantic HTML
+
+Optimized rendering
+
+Lighthouse SEO score above average
+
+📸 Screenshots
+
+Add screenshots of:
+
+Landing page
+
+Login / Register page
+
+Dashboard
+
+Issue creation page
+
+Example:
+
+screenshots/
+ ├── landing.png
+ ├── login.png
+ ├── dashboard.png
 
 
-**Issue Types**
-- Cloud Security
-- Red Team Assessment
-- VAPT
+Then embed:
 
-Features:
-- Create, update, delete issues
-- Filter by issue type
-- Protected APIs
+![Dashboard](screenshots/dashboard.png)
 
----
-
-## 🚦 Rate Limiting
-
-- Custom **RateLimiter class**
-- Limit: **100 requests / 15 minutes / IP**
-- Applied across all APIs
-- Returns proper HTTP headers
-- Responds with **429 Too Many Requests** on limit breach
-
----
-
-## ✉️ Email Integration (Resend)
-
-Emails sent using **Resend API**:
-- Welcome email on registration
-- Issue creation notification
-- Profile update notification
-- Password reset email (if enabled)
-
-HTML-based email templates used.
-
----
-
-## 🖥️ Frontend Pages
-
-- `/` – ApniSec themed landing page
-- `/login` – Login page
-- `/register` – Register page
-- `/dashboard` – Protected dashboard
-- `/profile` – User profile management
-
-✔ Responsive UI  
-✔ Form validation  
-✔ Loading & error states  
-
----
-
-## 🔍 SEO Optimization
-
-- SEO friendly meta tags
-- Semantic HTML
-- Lighthouse SEO score **80%+**
-- Performance optimized
-
----
-
-## ⚙️ Environment Variables
-
-Create `.env.example`:
-
-```env
+⚙️ Environment Variables
 PORT=5000
 MONGO_URI=
 JWT_SECRET=
-JWT_EXPIRES_IN=7d
 RESEND_API_KEY=
 
 🛠️ Local Setup
-# Clone repository
 git clone https://github.com/surjeetkumar800/Apni-Sec.git
 
 # Backend
@@ -181,20 +182,18 @@ npm run dev
 
 📦 Deployment
 
-Frontend deployed on Vercel
+Frontend: Render / Vercel
 
-Backend deployed on Render
+Backend: Render
 
-Database hosted on MongoDB Atlas
+Database: MongoDB Atlas
 
-Environment variables configured via hosting platforms.
+🧠 Key Learnings
 
-🧠 Challenges & Learnings
+Designing scalable OOP-based backend systems
 
-Implementing a fully OOP-based backend in Next.js
+Implementing secure authentication & rate limiting
 
-Designing reusable rate limiting logic
+Handling full production deployment
 
-Managing TypeScript with Mongoose
-
-Production-ready deployment setup
+Building SEO-friendly Next.js applications
